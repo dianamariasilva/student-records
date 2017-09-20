@@ -1,5 +1,6 @@
 var btnAdd = document.getElementById("add"); 
 var btnAll = document.getElementById("all"); 
+var btnfilter = document.getElementById("filter");
 var laboratoria = [];
 
 var student = {
@@ -36,20 +37,45 @@ btnAdd.onclick=function(){
     addStudent();
 }
 
+
+function getPerson(item, index) {
+    return `<div class="div1">\
+        <p class:"first">Student Name: ${item.name}</p>\
+        <p "first">TechPoints: ${item.techPoints}</p>\
+        <p "first">Life Points: ${item.lifePoints}</p>\
+        <p "first">Status: active</p>\
+    </div>`;
+}
 btnAll.onclick=function(){
-    myFunction();
-        function getFullName(item, index) {
-            return `<div class="div1">\
-                <p class:"first">Student Name: ${item.name}</p>\
-                <p "first">TechPoints: ${item.techPoints}</p>\
-                <p "first">Life Points: ${item.lifePoints}</p>\
-                <p "first">Status: active</p>\
-            </div>`;
-        }
+    getInfo();
+    function getInfo() {
+        document.getElementById("info").innerHTML = laboratoria.map(getPerson);
+    }
+    // $('#info').append ( `<p> ${student[student.length -1].name} </p>`);   
+}
 
-        function myFunction() {
-            document.getElementById("info").innerHTML = laboratoria.map(getFullName);
-        }
+btnfilter.onclick=function(){
+    getInfo();
+    
+    function getInfo() {
+        var arrayPer = laboratoria.filter(function(student){
+            return student.techPoints >= 70;
+        });
+        // getPerson(item, index);
+        console.log(arrayPer);
+        document.getElementById("info").innerHTML = arrayPer.map(getPerson);
+    }
+}
 
-        // $('#info').append ( `<p> ${student[student.length -1].name} </p>`);   
+btnfilterDown.onclick=function(){
+    getInfo();
+    
+    function getInfo() {
+        var arrayPer = laboratoria.filter(function(student){
+            return student.techPoints <= 70;
+        });
+        // getPerson(item, index);
+        console.log(arrayPer);
+        document.getElementById("info").innerHTML = arrayPer.map(getPerson);
+    }
 }
