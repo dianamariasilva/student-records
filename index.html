@@ -6,29 +6,29 @@
 	<title>App movil</title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="bs/dist/css/bootstrap-formhelpers.min.css">
 </head>
 <body>
     <header>
-        <h1>Student Records</h1>
+        <h1 class="text-center">Student Records</h1>
     </header>
     <section>
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-3">
-                <button onclick="addStudent()">Add Student</button>
+                <button class="btn" id="add">Add Student</button>
             </div>
             <div class="col-md-3">
-                <button>Print All</button>
+                <button class="btn" id="all">Print All</button>
             </div>
             <div class="col-md-3">
-                <button>Update Dropout</button>
+                <button class="btn">Update Dropout</button>
             </div>
             <div class="col-md-3">
-                <button>Run Employability</button>
+                <button class="btn">Run Employability</button>
             </div>
         </div>
-        <div class="row">
+        <div class="row text-center info">
             <p id="name"></p>
             <p id="tech"></p>
             <p id="life"></p>
@@ -40,6 +40,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
